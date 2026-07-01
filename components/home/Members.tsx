@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { members } from "@/lib/data/members";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -8,6 +8,7 @@ import OceanBackground from "@/components/ui/OceanBackground";
 import MemberCard from "@/components/members/MemberCard";
 
 export default function Members() {
+  
   return (
     <OceanBackground variant="deep" className="section-padding" id="members">
       <div className="container">

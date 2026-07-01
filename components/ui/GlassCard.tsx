@@ -18,11 +18,30 @@ export default function GlassCard({
 }: GlassCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={`glass rounded-2xl overflow-hidden ${hover ? "glass-hover" : ""} ${className}`}
+      transition={{
+        duration: 0.7,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      whileHover={
+        hover
+          ? {
+              y: -10,
+              scale: 1.03,
+            }
+          : undefined
+      }
+      className={`
+        relative
+        overflow-hidden
+        rounded-2xl
+        glass
+        ${hover ? "glass-hover" : ""}
+        ${className}
+      `}
     >
       {children}
     </motion.div>
