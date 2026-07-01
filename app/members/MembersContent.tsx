@@ -1,9 +1,11 @@
 "use client";
 
 import { members } from "@/lib/data/members";
+
 import PageHeader from "@/components/layout/PageHeader";
 import OceanBackground from "@/components/ui/OceanBackground";
-import MemberSection from "@/components/members/MemberSection";
+
+import WaveSection from "@/components/members/WaveSection";
 
 export default function MembersContent() {
   return (
@@ -14,15 +16,20 @@ export default function MembersContent() {
         description="다섯 개의 파도는 서로 다른 흐름을 품고 하나의 BLUEWAVE를 완성한다."
       />
 
-      <OceanBackground variant="deep" className="pb-20 md:pb-32">
+      <OceanBackground
+        variant="deep"
+        className="pb-32"
+      >
         <div className="container">
+
           {members.map((member, index) => (
-            <MemberSection
+            <WaveSection
               key={member.id}
               member={member}
               nextMember={members[index + 1]}
             />
           ))}
+
         </div>
       </OceanBackground>
     </>
