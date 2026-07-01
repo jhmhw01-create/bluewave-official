@@ -30,17 +30,35 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-ocean-deep/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20"
-          : "bg-transparent"
-      }`}
-    >
+  className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ${
+    scrolled
+      ? "bg-[#031325]/75 backdrop-blur-2xl border-b border-cyan-300/10 shadow-lg"
+      : "bg-transparent"
+  }`}
+>
       <nav className="container flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="group">
-          <span className="font-display text-xl md:text-2xl font-bold tracking-[0.25em] text-white group-hover:text-ocean-surface transition-colors duration-300">
-            BLUEWAVE
-          </span>
+          <span
+  className="
+  font-display
+  text-xl
+  md:text-2xl
+  font-bold
+  tracking-[0.28em]
+  bg-gradient-to-r
+  from-cyan-300
+  via-white
+  to-sky-300
+  bg-clip-text
+  text-transparent
+  drop-shadow-[0_0_18px_rgba(94,220,255,.6)]
+  transition-all
+  duration-300
+  group-hover:drop-shadow-[0_0_30px_rgba(94,220,255,.9)]
+"
+>
+  BLUEWAVE
+</span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
